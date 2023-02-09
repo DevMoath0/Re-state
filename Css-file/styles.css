@@ -348,3 +348,66 @@
 
 /* -------------------------------------------------------- Starting with the Add Item page ----------------------------- */
 
+.additem-outer-mid-container{
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+}
+#additem-name{
+    background: none;
+    border: none;
+    outline: none;
+}
+.additem-form-underline{
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(right, #a02d33, #a0712d);
+}
+.additem-mid-box{
+    padding: 20px;
+    height: 150px;
+    width: 700px;
+    background-color: #252525;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    margin-top: 40px;
+}
+.additem-mid-box:hover{
+    box-shadow: 10px 10px #a0712d;
+    transition: 0.4s;
+}
+.additem-mid-box label{
+    font-size: 30px;
+}
+.additem-mid-box input{
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+}
+.additem-btn{
+    margin-top: 30px;
+    background: #252525;
+    border: none;
+    border-radius: 21px;
+    cursor: pointer;
+    color: white;
+    font-family: "kanit";
+    font-size: larger;
+    height: 80px;
+    width: 180px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: 0.25s;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.additem-btn:hover{
+    box-shadow: 6px 6px #a0712d;
+}
+.additem-outer-mid-container .additem-btn{
+    display: flex;
+    justify-content: center;
+}

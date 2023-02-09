@@ -39,14 +39,30 @@
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Login -->
+        <!-- Add Item forms -->
         <div class="panel-mid-container">
-            <div class="outer-mid-container">
-                <button class="panel-mid-box"><img src="images/plus.png" alt="Plus icon" class="text-icon">Add Item</button>
-                
-                <button class="panel-mid-box"><img src="images/edit.png" alt="Edit icon" class="text-icon">Edit Item</button>
-                
-                <button class="panel-mid-box"><img src="images/delete.png" alt="Delete icon" class="text-icon">Delete Item</button>
+            <div class="additem-outer-mid-container">
+                    <form method="post" action="#">
+                        <div class="additem-mid-box">
+                            <label for="additem-name">Item Name</label>
+                            <br><br>
+                            <input type="text" name="item-name" id="additem-name" placeholder="Enter Name">
+                            <div class="additem-form-underline"></div>
+                        </div>
+                        <div class="additem-mid-box">
+                            <label for="additem-name">Item Description</label>
+                            <br><br>
+                            <input type="text" name="item-name" id="additem-name" placeholder="Enter Description">
+                            <div class="additem-form-underline"></div>
+                        </div>
+                        <div class="additem-mid-box">
+                            <label for="additem-name">Item Description</label>
+                            <br><br>
+                            <input type="file" name="item-name" id="additem-name">
+                            <div class="additem-form-underline"></div>
+                        </div>
+                        <input class="additem-btn" type="button" value="Submit">
+                    </form>
             </div>
         </div>
         

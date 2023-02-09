@@ -17,7 +17,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     else{
-        $sql = "SELECT * FROM admin WHERE username='$username' AND email='$email'";
+        $sql = "SELECT * FROM admin WHERE username='$username' AND email = '$email'";
 
         $result = mysqli_query($conn, $sql);
 

@@ -114,6 +114,26 @@
 .card-title{
     font-weight: 700;
 }
+.item-btn-item{
+    margin-top: 30px;
+    background: -webkit-linear-gradient(right, #a02d33, #a0712d);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #a0522d  ;
+    cursor: pointer;
+    color: white;
+    font-family: "kanit";
+    font-size: larger;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.25s;
+    width: 153px;
+}
+.item-btn-item:hover{
+    box-shadow: 0px 1px 18px #a0712d;
+}
 
 /* -------------------------------------------------------- Done with the Item page -------------------------------------------------------- */
 
@@ -178,7 +198,7 @@
     backdrop-filter: blur(20px);
     border-radius: 10px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    height: 490px;
+    height: 550px;
     width: 300px;
     text-align: center;
     padding: 15px;
@@ -237,4 +257,84 @@
 #signup-pointer{
     margin-top: 10px;
     color: #fff;
+}
+
+/* -------------------------------------------------------- Done with the Admin page -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Faild to sign & Success to sign page ----------------------------- */
+
+/* Colors of the buttons */
+.retry-btn{
+    color: #f39265;
+}
+.retry-text{
+    font-size: 25px;
+}
+
+/* -------------------------------------------------------- Done with the Faild to sign & Success to sign page ---------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Single Item page ----------------------------- */
+
+.single-item-mid-container{
+    height: 100vh;
+    width: 100%;
+    background-color: #703d20;
+}
+.single-container{
+    justify-content: center;
+}
+.card{
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+}
+.card-body-single{
+    padding: 10px;
+}
+
+/* Image in card */
+.card-img-top{
+    height: 150px;
+    width: 100%;
+}
+
+/* Card title */
+.card-title{
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------- Done with the Single Item page ---------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Admin Panel page ----------------------------- */
+
+.panel-mid-container{
+    height: 100vh;
+    width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../images/h4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+.outer-mid-container{
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+}
+.panel-mid-box{
+    height: 200px;
+    width: 400px;
+    background-color: #252525;
+    color: #fff;
+    border: none;
+    font-size: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s;
+    
+}
+.panel-mid-box:hover{
+    box-shadow: 10px 10px #a0712d;
+    transition: 0.4s;
 }

@@ -1,0 +1,240 @@
+*{
+    font-family: "kanit";
+}
+
+/* Re-State Logo top-left corner */
+.logo-text{
+    height: 5rem;
+    width: 10rem;
+}
+
+.nav-item{
+    font-size: 1.5rem;
+    padding: 0 20px;
+}
+
+.navbar-collapse{
+    margin-left: 30px;
+    margin-right: 500px;
+}
+
+/* When hovering the text will be bigger and change color */
+.nav-item:hover a{
+    color: sienna;
+    font-size: 1.7rem;
+    transition: font-size 200ms ease-in;
+}
+
+/* Getting the text to the original form*/
+.nav-item a{
+    transition: font-size 300ms ease-in;
+}
+
+/* Admin button*/
+.btn-primary{
+    padding: 5px 20px;
+    color: black;
+    border: 2px solid;
+    background: none;
+    margin-right: 10px;
+}
+
+/* Changing the color of the button when hovering */
+.btn-primary:hover{
+    background-color: sienna;
+    border-color: sienna;
+}
+
+*{
+    margin: 0;
+}
+
+/* It Contains the background of the Home page */
+.home-Mid-Container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../images/h1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animate 10s ease-in-out infinite;
+}
+
+/* Animating the Home background */
+@keyframes animate{
+    25%{
+        background-image: url(../images/h2.jpg); 
+    }
+    50%{
+        background-image: url(../images/h1.jpg); 
+    }
+    75%{
+        background-image: url(../images/h3.jpg); 
+    }
+    
+}
+
+/* -------------------------------------------------------- Done with the Home page & NavBar -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Item page -------------------------------------------------------- */
+
+/* Middle container with background */
+.item-mid-container{
+    height: 100vh;
+    width: 100%;
+    background-color: #703d20;
+}
+
+/* The whole card row */
+.card-deck{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: left;
+    margin: auto;
+}
+
+/* The item card */
+.card{
+    width: 350px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+/* Image in card */
+.card-img-top{
+    height: 150px;
+    width: 100%;
+}
+
+/* Card title */
+.card-title{
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------- Done with the Item page -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Starting with the About us page -------------------------------------------------------- */
+
+/* Middle continer with background */
+.about-mid-container{
+    height: 100vh;
+    width: 100%;
+    background-color: #703d20;
+}
+
+/* Containing the elements */
+.first-about-container{
+    width: 100%;
+    align-items: start;
+    display: flex;
+    padding: 20px;
+}
+
+/* House image and it's options */
+.house-image{
+    border-radius: 10%;
+    height: 25rem;
+    width:  40rem;
+}
+.first-paragraph{
+    font-size: xx-large;
+    color: #fff;
+    margin: 30px;
+}
+.second-about-container{
+    align-items: start;
+    display: flex;
+    padding: 20px;
+}
+
+/* -------------------------------------------------------- Done with the About us page -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Admin page -------------------------------------------------------- */
+
+.admin-mid-container{
+    height: 100vh;
+    width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../images/h4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+.outer-login-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.login-card{
+    background: none;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 490px;
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+#login-title{
+    margin-top: 30px;
+    color: #fff;
+}
+.underline-title{
+    background: -webkit-linear-gradient(right, #a02d33  , #a0712d );
+    height: 2px;
+    margin: 1rem auto 0 auto;
+    width: 89px;
+}
+#login-form{
+    margin-top: 80px;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+}
+.form-underline{
+    background: -webkit-linear-gradient(right, #a02d33, #a0712d);
+    height: 1px;
+    width: 100%;
+}
+.form-content{
+    background: none;
+    border: none;
+    outline: none;
+    padding-top: 14px;
+    color: #fff;
+    font-size: x-large;
+}
+.form-content::placeholder{
+    color: #ffffff9c;
+}
+.login-btn{
+    margin-top: 30px;
+    background: -webkit-linear-gradient(right, #a02d33, #a0712d);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #a0522d  ;
+    cursor: pointer;
+    color: white;
+    font-family: "kanit";
+    font-size: larger;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: 0.25s;
+    width: 153px;
+}
+.login-btn:hover{
+    box-shadow: 0px 1px 18px #a0712d;
+}
+#signup-pointer{
+    margin-top: 10px;
+    color: #fff;
+}

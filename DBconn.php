@@ -17,7 +17,18 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     else{
-        $sql = "INSERT INTO admin(username,email,password) VALUES('$username','$email','$password')";
+        $sql = "SELECT * FROM admin WHERE username='$username' AND email='$email'";
+
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) === 1){
+            include('FaildToSign.html');
+            $conn->close();
+        } 
+        else {
+            $sql = "INSERT INTO admin(username,email,password) VALUES('$username','$email','$password')";
+        }
+        
     }
 
     if (mysqli_query($conn, $sql)) {

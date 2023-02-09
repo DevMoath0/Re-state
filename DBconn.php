@@ -16,6 +16,7 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+    //check if the username or email is already taken
     else{
         $sql = "SELECT * FROM admin WHERE username='$username' AND email = '$email'";
 
@@ -25,17 +26,16 @@
             include('FaildToSign.html');
             $conn->close();
         } 
+        //inserting into th DB
         else {
             $sql = "INSERT INTO admin(username,email,password) VALUES('$username','$email','$password')";
+            if (mysqli_query($conn, $sql)) {
+                include('SignupSuccess.html');
+            } else {
+                include('FaildToSign.html');
+            }
         }
         
     }
-
-    if (mysqli_query($conn, $sql)) {
-        include('SignupSuccess.html');
-    } else {
-        include('FaildToSign.html');
-    }
-
     $conn->close();
 ?>

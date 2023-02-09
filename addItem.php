@@ -118,7 +118,7 @@ if(isset($_POST["submit"])){
                             <input type="file" name="logo" accept=".jpg, .jpeg, .png" id="additem-name">
                             <div class="additem-form-underline"></div>
                         </div>
-                        <button type = "submit" name = "submit" class="additem-btn">Submit</button>
+                        <button type="submit" name="submit" class="additem-btn">Submit</button>
                     </form>
             </div>
         </div>

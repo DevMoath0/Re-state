@@ -332,7 +332,7 @@
     border-radius: 10px;
     text-align: center;
     transition: 0.4s;
-    
+    margin-top: 40px;
 }
 .panel-mid-box:hover{
     box-shadow: 10px 10px #a0712d;

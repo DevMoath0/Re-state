@@ -47,10 +47,10 @@ if (!$conn) {
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Single Items Cards-->
+        <!-- Edit Single Items Cards-->
         <div class="item-mid-container">
                 <!-------------------------------------------here---------------------------------------->
-                <div class="card-deck">
+                <div class="edit-single-container">
                     <?php
                     //get The item IDD
                     $itemID=$_POST['ID'];
@@ -59,21 +59,18 @@ if (!$conn) {
                     $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC")
                     ?>
                     <?php foreach ($rows as $row) : ?>
-                    <div class="card">
+                    <div class="card edit-single">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">
-                        <form action="alterItem.php" method="POST">
-                            <label for="">Name: 
-                            <input type="text" value="<?php echo $row["name"]; ?>" name="newName">
-                            </label>
+                        <form action="alterItem.php" method="POST" class="edit-element-form">
+                            <input type="text" name="newName" placeholder="Enter new Name" class="edit-single-input">
+                            <div class="form-underline"></div>
                             <br>
-                            <label for="">Name: 
-                            <input type="text" value="<?php echo $row["description"]; ?>" name="newDes">
-                            </label>
+                            <input type="text" name="newDes" placeholder="Enter new Description" class="edit-single-input">
+                            <div class="form-underline"></div>
                             <input type="text" hidden value="<?php echo $row["ID"]; ?>" name="ID">
-                            <button type="submit" class="item-btn-item" >Submit edit</button>
+                            <button type="submit" class="edit-single-btn-item" >Submit edit</button>
                         </form>
-                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
                       </div>
                     </div>
                     <?php endforeach; ?>

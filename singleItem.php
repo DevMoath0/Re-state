@@ -52,8 +52,9 @@ if (!$conn) {
                 <!-------------------------------------------here---------------------------------------->
                 <div class="card-deck">
                     <?php
+                    $itemID=$_POST['ID'];
                     $i = 1;
-                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+                    $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC")
                     ?>
                     <?php foreach ($rows as $row) : ?>
                     <div class="card">
@@ -62,7 +63,7 @@ if (!$conn) {
                         <?php echo $row["name"]; ?>
                         <?php echo $row["description"]; ?>
                         <p class="card-review">This will be the review of the property</p>
-                        <form action="singleItem.php" method="POST">
+                        <form action="singleItem.php" method="$_POST">
                         <input type="text" name="ID" value="<?php echo $row["ID"]; ?>">
                         <button type="submit" class="item-btn-item" >Go To Item</button>
                         </form>

@@ -34,7 +34,7 @@ if (!$conn) {
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="item.html">Item profile</a>
+                        <a class="nav-link" href="item.php">Item profile</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="about.html">About us</a>
@@ -59,9 +59,8 @@ if (!$conn) {
                     <div class="card">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">
-                        <?php echo $row["name"]; ?> 
-                        <?php echo $row["description"]; ?>
-                        <p class="card-review">This will be the review of the property</p>
+                        <h3 class="item-name"><?php echo $row["name"]; ?> </h3>
+                        <p class="item-description"><?php echo $row["description"]; ?></p>
                         <form action="editSingleItem.php" method="POST">
 
                         <!--Store The ID in Hidden text field to make the text field posted to the singleItem page -->

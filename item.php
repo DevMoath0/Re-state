@@ -59,10 +59,9 @@ if (!$conn) {
                     <div class="card">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">
-                        <?php echo $row["name"]; ?>
-                        <?php echo $row["description"]; ?>
-                        <p class="card-review">This will be the review of the property</p>
-                        <form action="singleItem.php" method="POST">
+                      <h3 class="item-name"><?php echo $row["name"]; ?> </h3>
+                      <p class="item-description"><?php echo $row["description"]; ?></p>
+                      <form action="singleItem.php" method="POST">
 
                         <!--Store The ID in Hidden text field to make the text field posted to the singleItem page -->
                         <!-- 500IQ mashallah -->

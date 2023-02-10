@@ -33,7 +33,7 @@ if (!$conn) {
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="item.php">Item profile</a>
+                        <a class="nav-link active" href="item.php">Items profile</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="about.html">About us</a>
@@ -68,7 +68,6 @@ if (!$conn) {
                         <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
                         <button type="submit" class="item-btn-item" >Go To Item</button>
                         </form>
-                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
                       </div>
                     </div>
                     <?php endforeach; ?>

@@ -33,7 +33,7 @@ if (!$conn) {
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="item.php">Item profile</a>
+                        <a class="nav-link active" href="item.php">Items profile</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="about.html">About us</a>
@@ -48,7 +48,7 @@ if (!$conn) {
         <!-- NavBar Closed-->
 
         <!-- Single Items Cards-->
-        <div class="item-mid-container">
+        <div class="single-item-mid-container">
                 <!-------------------------------------------here---------------------------------------->
                 <div class="card-deck">
                     <?php
@@ -65,8 +65,8 @@ if (!$conn) {
                         <div class="card">
                         <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                         <div class="card-body">
-                          <?php echo $row["name"]; ?>
-                          <?php echo $row["description"]; ?>
+                        <h3 class="item-name"><?php echo $row["name"]; ?> </h3>
+                        <p class="item-description"><?php echo $row["description"]; ?></p>
                         </div>
                       </div>
                     <?php endforeach; ?>
@@ -77,46 +77,45 @@ if (!$conn) {
                         <div class="card">
                         <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                         <div class="card-body">
-                          <?php echo $row["name"]; ?>
-                          <?php echo $row["description"]; ?>
-                           <p class="card-review">This will be the review of the property</p>
-                          <p class="card-text"><small class="text-muted"><?php echo $com["rating"]; ?> / 5</small></p>
+                          <h3 class="item-name"><?php echo $row["name"]; ?> </h3>
+                          <p class="item-description"><?php echo $row["description"]; ?></p>
                         </div>
-                        <div class="card-body">
-                          <?php echo $com["name"]; ?>
-                          <?php echo $com["body"]; ?>
+                        <div class="card-body-review">
+                          <h5 class="review-name"><?php echo $com["name"]; ?> </h3>
+                          <p class="review-body"><?php echo $com["body"]; ?></p>
+                          <div class="rate-box">
+                            <p class="card-rate"><?php echo $com["rating"]; ?> / 5</p>
+                          </div>
                        </div>
                       </div>
                       <?php endforeach; ?>
                     <?php endforeach; ?>
                     
                 </div>
-                
-                <!--Review section-->
-                <div>
-                  <form action="addRev.php" method="POST">
-                    <div>
-                      <label for="">Name: </label>
-                      <input type="text" name="name">
-                    </div>
-                    <div>
-                      <label for="">Comments: </label>
-                      <textarea name="com" rows="6" cols="75"></textarea>
-                    </div>
-                    <div>
-                      <label for="">Rating: </label>
-                      <input type="number" max="5" min="0" name="rate" placeholder="Out of 5">
-                    </div>
+                <div class="whole-bottom-mid-container">
+                        <!--Review section-->
+                  <div class="review-form-box">
+                    <form action="addRev.php" method="POST">
+                      <div>
+                        <input type="text" name="name" placeholder="Enter your Name" class="review-name-form">
+                      </div>
+                      <div>
+                        <textarea name="com" rows="6" cols="75" placeholder="Enter your Review" class="review-text-form"></textarea>
+                      </div>
+                      <div>
+                        <input type="number" max="5" min="0" name="rate" placeholder="Out of 5" class="rate-element">
+                      </div>
 
-                    <!--take the idd of comment-->
-                    <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
+                      <!--take the id of comment-->
+                      <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
+                      <div>
+                        <button type="submit" class="item-btn-item">Submit</button>
+                      </div>
+                    </form>
+                  </div>
 
-                    <div>
-                      <button type="submit" class="item-btn-item" >Submit</button>
-                    </div>
-                  </form>
                 </div>
-    
+                
     <br>
               <!-------------------------------------------here---------------------------------------->
         </div>

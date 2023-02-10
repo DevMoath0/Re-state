@@ -149,6 +149,9 @@
     width: 100%;
     background-color: #703d20;
 }
+.about-text{
+    font-weight: 700;
+}
 
 /* Containing the elements */
 .first-about-container{
@@ -526,4 +529,52 @@
     margin-top: -5px;
     width: 60px;
     height: 60px;
+}
+
+/* -------------------------------------------------------- Done with the Dell Item page ---------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Addrev Item page ----------------------------- */
+
+.single-item-mid-container{
+    height: 165vh;
+    width: 100%;
+    background-color: #703d20;
+}
+.card-body-review{
+    padding: 15px;
+}
+.review-name{
+    color: #a02d33;
+    font-weight: 700;
+}
+.rate-box{
+    background-color: #252525;
+    width: 25%;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+.card-rate{
+    color: #fff;
+}
+.whole-bottom-mid-container{
+    display: flex;
+    justify-content: center;
+    background-color: #252525;
+}
+.review-form-box{
+    padding: 20px;
+}
+.rate-element{
+    width: 50px;
+}
+.review-text-form{
+    width: 50%;
+    height: 100px;
+    resize: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.rate-element{
+    width: 100px;
 }

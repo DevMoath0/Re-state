@@ -33,7 +33,7 @@ if (!$conn) {
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="item.php">Item profile</a>
+                        <a class="nav-link active" href="item.php">Items profile</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="about.html">About us</a>

@@ -6,54 +6,20 @@ if (!$conn) {
 }
 
 if(isset($_POST["submit"])){
-  $name = $_POST["name"];
-  $description = $_POST["description"];
-  if($_FILES["logo"]["error"] == 4){
-    echo
-    "<script> alert('Image Does Not Exist'); </script>"
-    ;
-  }
-  else{
-    $fileName = $_FILES["logo"]["name"];
-    $fileSize = $_FILES["logo"]["size"];
-    $tmpName = $_FILES["logo"]["tmp_name"];
+  $ID=$_POST["ID"];
+  $description=$_POST['description'];
 
-    $validImageExtension = ['jpg', 'jpeg', 'png'];
-    $imageExtension = explode('.', $fileName);
-    $imageExtension = strtolower(end($imageExtension));
-    if ( !in_array($imageExtension, $validImageExtension) ){
-      echo
-      "
-      <script>
-        alert('Invalid Image Extension');
-      </script>
-      ";
-    }
-    else if($fileSize > 1000000){
-      echo
-      "
-      <script>
-        alert('Image Size Is Too Large');
-      </script>
-      ";
-    }
-    else{
-      $newImageName = uniqid();
-      $newImageName .= '.' . $imageExtension;
-
-      move_uploaded_file($tmpName, 'images/' . $newImageName);
-      $query = "INSERT INTO item VALUES('','$name','$newImageName','$description',1)";
-      mysqli_query($conn, $query);
-      echo
-      "
-      <script>
-        alert('Successfully Added');
-        document.location.href = 'data.php';
-      </script>
-      ";
-    }
-  }
+  $query = "UPDATE item SET description = $description WHERE ID=$ID";
+  mysqli_query($conn, $query);
+  echo
+  "
+  <script>
+  alert('Successfully edited');
+  document.location.href = 'data.php';
+  </script>
+  ";
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -103,25 +69,13 @@ if(isset($_POST["submit"])){
                         <div class="additem-mid-box">
                             <label for="additem-name">Enter ID</label>
                             <br><br>
-                            <input type="text" name="name" id="additem-name" placeholder="Enter Name">
-                            <div class="additem-form-underline"></div>
-                        </div>
-                        <div class="additem-mid-box">
-                            <label for="additem-name">Edit Name</label>
-                            <br><br>
-                            <input type="text" name="name" id="additem-name" placeholder="Enter Name">
+                            <input type="text" name="ID" id="additem-name" placeholder="Enter ID">
                             <div class="additem-form-underline"></div>
                         </div>
                         <div class="additem-mid-box">
                             <label for="additem-name">Edit Description</label>
                             <br><br>
                             <input type="text" name="description" id="additem-name" placeholder="Enter Description">
-                            <div class="additem-form-underline"></div>
-                        </div>
-                        <div class="additem-mid-box">
-                            <label for="additem-name">Edit Logo</label>
-                            <br><br>
-                            <input type="file" name="logo" accept=".jpg, .jpeg, .png" id="additem-name">
                             <div class="additem-form-underline"></div>
                         </div>
                         <button type="submit" name="submit" class="additem-btn">Submit</button>

@@ -96,14 +96,14 @@ if(isset($_POST["submit"])){
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Edit Item forms -->
+        <!-- delete Item forms -->
         <div class="panel-mid-container">
             <div class="additem-outer-mid-container">
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="additem-mid-box">
                             <label for="additem-name">Enter ID</label>
                             <br><br>
-                            <input type="text" name="name" id="additem-name" placeholder="Enter Name">
+                            <input type="text" name="name" id="additem-name" placeholder="Enter ID">
                             <div class="additem-form-underline"></div>
                         </div>
                         <button type="submit" name="submit" class="additem-btn">Submit</button>

@@ -48,7 +48,7 @@ if(isset($_POST["submit"])){
       "
       <script>
         alert('Successfully Added');
-        document.location.href = 'data.php';
+        document.location.href = 'item.php';
       </script>
       ";
     }

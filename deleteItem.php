@@ -99,24 +99,24 @@ if(isset($_POST["submit"])){
         <!-- delete Item forms -->
         <div class="single-item-mid-container delete">
         <div class="card-deck">
-                    <?php
-                    $i = 1;
-                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
-                    ?>
-                    <?php foreach ($rows as $row) : ?>
-                    <div class="card">
-                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
-                      <div class="card-body">
-                        <?php echo $row["name"]; ?>
-                        <?php echo $row["description"]; ?>
-                        <p class="card-review">This will be the review of the property</p>
-                        
-                        <!-- Delete Item not functioning -->
-                        <button class="item-btn-item" onclick="window.location.href='singleItem.html';">Delete Item</button>
-                      </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
+          <?php
+          $i = 1;
+          $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+          ?>
+          <?php foreach ($rows as $row) : ?>
+          <div class="card">
+            <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+            <div class="card-body">
+               <?php echo $row["name"]; ?>
+                <?php echo $row["description"]; ?>
+                <p class="card-review">This will be the review of the property</p>
+
+                <!-- Delete Item not functioning -->
+                <button class="item-btn-item" onclick="window.location.href='singleItem.html';">Delete Item</button>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
         </div>
     </body>
 

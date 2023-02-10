@@ -423,6 +423,29 @@
 
 /* The same variables are used by both the "Add Item page" & "Edit Item page" */
 
+.card-body name{
+    font-size: 30px;
+}
+.edit-btn-item{
+    margin-top: 30px;
+    background: -webkit-linear-gradient(right, #a02d33, #a0712d);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #a0522d  ;
+    cursor: pointer;
+    color: white;
+    font-family: "kanit";
+    font-size: larger;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.25s;
+    width: 153px;
+}
+.edit-btn-item:hover{
+    box-shadow: 0px 1px 18px #a0712d;
+}
 
 
 /* -------------------------------------------------------- Done with the Edit Item page ---------------------------------- */

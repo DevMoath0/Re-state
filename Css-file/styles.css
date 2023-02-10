@@ -500,3 +500,30 @@
 .edit-single-btn-item:hover{
     box-shadow: 0px 1px 18px #a0712d;
 }
+
+/* -------------------------------------------------------- Done with the Edit single Item page ---------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Dell Item page ----------------------------- */
+
+.delete-box{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 200px;
+    background-color: #252525;
+    color: #fff;
+    border: none;
+    font-size: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s;
+}
+.delete-box:hover{
+    box-shadow: 10px 10px #a02d33;
+    transition: 0.4s;
+}
+.delete-database-img{
+    margin-top: -5px;
+    width: 60px;
+    height: 60px;
+}

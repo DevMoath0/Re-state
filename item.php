@@ -33,7 +33,7 @@ if (!$conn) {
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="item.html">Item profile</a>
+                        <a class="nav-link active" href="item.php">Item profile</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="about.html">About us</a>
@@ -63,10 +63,13 @@ if (!$conn) {
                         <?php echo $row["description"]; ?>
                         <p class="card-review">This will be the review of the property</p>
                         <form action="singleItem.php" method="POST">
-                        <input type="text" name="ID" value="<?php echo $row["ID"]; ?>">
+
+                        <!--Store The ID in Hidden text field to make the text field posted to the singleItem page -->
+                        <!-- 500IQ mashallah -->
+                        <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
                         <button type="submit" class="item-btn-item" >Go To Item</button>
                         </form>
-                        <p class="card-text"><small class="text-muted">5 out of 5 <?php echo $row["ID"]; ?> </small></p>
+                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
                       </div>
                     </div>
                     <?php endforeach; ?>

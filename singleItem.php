@@ -47,12 +47,14 @@ if (!$conn) {
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Items Cards-->
+        <!-- Single Items Cards-->
         <div class="item-mid-container">
                 <!-------------------------------------------here---------------------------------------->
                 <div class="card-deck">
                     <?php
+                    //get The item IDD
                     $itemID=$_POST['ID'];
+                    
                     $i = 1;
                     $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC")
                     ?>
@@ -63,11 +65,7 @@ if (!$conn) {
                         <?php echo $row["name"]; ?>
                         <?php echo $row["description"]; ?>
                         <p class="card-review">This will be the review of the property</p>
-                        <form action="singleItem.php" method="$_POST">
-                        <input type="text" name="ID" value="<?php echo $row["ID"]; ?>">
-                        <button type="submit" class="item-btn-item" >Go To Item</button>
-                        </form>
-                        <p class="card-text"><small class="text-muted">5 out of 5 <?php echo $row["ID"]; ?> </small></p>
+                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
                       </div>
                     </div>
                     <?php endforeach; ?>

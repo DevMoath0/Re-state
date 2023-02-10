@@ -96,24 +96,30 @@ if(isset($_POST["submit"])){
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Add Item forms -->
+        <!-- Edit Item forms -->
         <div class="panel-mid-container">
             <div class="additem-outer-mid-container">
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="additem-mid-box">
-                            <label for="additem-name">Item Name</label>
+                            <label for="additem-name">Enter ID</label>
                             <br><br>
                             <input type="text" name="name" id="additem-name" placeholder="Enter Name">
                             <div class="additem-form-underline"></div>
                         </div>
                         <div class="additem-mid-box">
-                            <label for="additem-name">Item Description</label>
+                            <label for="additem-name">Edit Name</label>
+                            <br><br>
+                            <input type="text" name="name" id="additem-name" placeholder="Enter Name">
+                            <div class="additem-form-underline"></div>
+                        </div>
+                        <div class="additem-mid-box">
+                            <label for="additem-name">Edit Description</label>
                             <br><br>
                             <input type="text" name="description" id="additem-name" placeholder="Enter Description">
                             <div class="additem-form-underline"></div>
                         </div>
                         <div class="additem-mid-box">
-                            <label for="additem-name">Item Logo</label>
+                            <label for="additem-name">Edit Logo</label>
                             <br><br>
                             <input type="file" name="logo" accept=".jpg, .jpeg, .png" id="additem-name">
                             <div class="additem-form-underline"></div>

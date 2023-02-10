@@ -56,7 +56,6 @@ if (!$conn) {
                     $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
                     ?>
                     <?php foreach ($rows as $row) : ?>
-                     
                     <div class="card">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">

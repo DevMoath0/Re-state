@@ -54,24 +54,54 @@ if (!$conn) {
                     <?php
                     //get The item IDD
                     $itemID=$_POST['ID'];
-                    
                     $i = 1;
-                    $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC")
+                    $rev=mysqli_query($conn, "SELECT * FROM review WHERE item_id='$itemID' ORDER BY id DESC");
+                    $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC");
                     ?>
                     <?php foreach ($rows as $row) : ?>
-                    <div class="card">
-                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
-                      <div class="card-body">
-                        <?php echo $row["name"]; ?>
-                        <?php echo $row["description"]; ?>
-                        <p class="card-review">This will be the review of the property</p>
-                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
+                      <?php foreach ($rev as $com) : ?>
+                        <div class="card">
+                        <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                        <div class="card-body">
+                          <?php echo $row["name"]; ?>
+                          <?php echo $row["description"]; ?>
+                           <p class="card-review">This will be the review of the property</p>
+                          <p class="card-text"><small class="text-muted"><?php echo $com["rating"]; ?> / 5</small></p>
+                        </div>
+                        <div class="card-body">
+                          <?php echo $com["name"]; ?>
+                          <?php echo $com["body"]; ?>
+                       </div>
                       </div>
-                    </div>
+                      <?php endforeach; ?>
                     <?php endforeach; ?>
                     
                 </div>
-      
+                
+                <!--Review section-->
+                <div>
+                  <form action="addRev.php" method="POST">
+                    <div>
+                      <label for="">Name: </label>
+                      <input type="text" name="name">
+                    </div>
+                    <div>
+                      <label for="">Comments: </label>
+                      <textarea name="com" rows="6" cols="75"></textarea>
+                    </div>
+                    <div>
+                      <label for="">Rating: </label>
+                      <input type="number" max="5" min="0" name="rate" placeholder="Out of 5">
+                    </div>
+
+                    <!--take the idd of comment-->
+                    <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
+
+                    <div>
+                      <button type="submit" class="item-btn-item" >Submit</button>
+                    </div>
+                  </form>
+                </div>
     
     <br>
               <!-------------------------------------------here---------------------------------------->

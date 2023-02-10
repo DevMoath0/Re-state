@@ -59,7 +59,7 @@ if (!$conn) {
                     <div class="card">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">
-                        <?php echo $row["name"]; ?>
+                        <?php echo $row["name"]; ?> 
                         <?php echo $row["description"]; ?>
                         <p class="card-review">This will be the review of the property</p>
                         <form action="editSingleItem.php" method="POST">

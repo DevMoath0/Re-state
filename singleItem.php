@@ -58,6 +58,20 @@ if (!$conn) {
                     $rev=mysqli_query($conn, "SELECT * FROM review WHERE item_id='$itemID' ORDER BY id DESC");
                     $rows = mysqli_query($conn, "SELECT * FROM item WHERE ID='$itemID' ORDER BY id DESC");
                     ?>
+
+
+                    <!--this will appear the item even without rev-->
+                    <?php foreach ($rows as $row) : ?>
+                        <div class="card">
+                        <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                        <div class="card-body">
+                          <?php echo $row["name"]; ?>
+                          <?php echo $row["description"]; ?>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                    
+                      <!--this will appear the item rev-->
                     <?php foreach ($rows as $row) : ?>
                       <?php foreach ($rev as $com) : ?>
                         <div class="card">

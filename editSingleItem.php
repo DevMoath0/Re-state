@@ -62,9 +62,17 @@ if (!$conn) {
                     <div class="card">
                       <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
                       <div class="card-body">
-                        <?php echo $row["name"]; ?>
-                        <?php echo $row["description"]; ?>
-                        <p class="card-review">This will be the review of the property</p>
+                        <form action="alterItem.php" method="POST">
+                            <label for="">Name: 
+                            <input type="text" value="<?php echo $row["name"]; ?>" name="newName">
+                            </label>
+                            <br>
+                            <label for="">Name: 
+                            <input type="text" value="<?php echo $row["description"]; ?>" name="newDes">
+                            </label>
+                            <input type="text" hidden value="<?php echo $row["ID"]; ?>" name="ID">
+                            <button type="submit" class="item-btn-item" >Submit edit</button>
+                        </form>
                         <p class="card-text"><small class="text-muted">5 out of 5</small></p>
                       </div>
                     </div>

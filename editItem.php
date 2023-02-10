@@ -4,23 +4,9 @@ $conn = mysqli_connect("localhost", "root","", "restate");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-if(isset($_POST["submit"])){
-  $ID=$_POST["ID"];
-  $description=$_POST['description'];
-
-  $query = "UPDATE item SET description = $description WHERE ID=$ID";
-  mysqli_query($conn, $query);
-  echo
-  "
-  <script>
-  alert('Successfully edited');
-  document.location.href = 'data.php';
-  </script>
-  ";
-}
-
 ?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,25 +51,29 @@ if(isset($_POST["submit"])){
         <!-- Edit Item forms -->
         <div class="single-item-mid-container">
           <div class="card-deck">
-            <?php
-            $i = 1;
-            $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
-            ?>
-            <?php foreach ($rows as $row) : ?>
-            <div class="card">
-               <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
-                <div class="card-body">
-                  <?php echo $row["name"];
-                  echo "<br>";
-                  ?>
-                  <?php echo $row["description"]; ?>
-                  <p class="card-review">This will be the review of the property</p>
-                        
-                  <!-- Edit Item not functioning -->
-                  <button class="edit-btn-item"">Edit Item</button>
-                </div>
-            </div>
+          <?php
+                    $i = 1;
+                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+                    ?>
+                    <?php foreach ($rows as $row) : ?>
+                    <div class="card">
+                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                      <div class="card-body">
+                        <?php echo $row["name"]; ?>
+                        <?php echo $row["description"]; ?>
+                        <p class="card-review">This will be the review of the property</p>
+                        <form action="editSingleItem.php" method="POST">
+
+                        <!--Store The ID in Hidden text field to make the text field posted to the singleItem page -->
+                        <!-- 500IQ mashallah -->
+                        <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
+                        <button type="submit" class="item-btn-item" >edit Item</button>
+                        </form>
+                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
+                      </div>
+                    </div>
             <?php endforeach; ?>
+
           </div>
         </div>
         

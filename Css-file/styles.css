@@ -310,10 +310,8 @@
 /* -------------------------------------------------------- Starting with the Admin Panel page ----------------------------- */
 
 .panel-mid-container{
-    height: 100vh;
+    height: 120vh;
     width: 100%;
-    width: 100%;
-    height: 100vh;
     position: relative;
     background-image: url(../images/h4.jpg);
     background-position: center;
@@ -350,7 +348,9 @@
 
 /* -------------------------------------------------------- Done with the Admin Panel page ---------------------------------- */
 
-/* -------------------------------------------------------- Starting with the Add Item page ----------------------------- */
+/* -------------------------------------------------------- Starting with the Add Item page --------------------------------- */
+
+/* Note these are use in two pages */
 
 .additem-outer-mid-container{
     display: grid;
@@ -416,3 +416,9 @@
     display: flex;
     justify-content: center;
 }
+
+/* -------------------------------------------------------- Done with the Add Item page ---------------------------------- */
+
+/* -------------------------------------------------------- Starting with the Edit Item page ----------------------------- */
+
+/* The same variables are used by both the "Add Item page" & "Edit Item page" */

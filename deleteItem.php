@@ -1,3 +1,60 @@
+<?php
+
+$conn = mysqli_connect("localhost", "root","", "restate");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if(isset($_POST["submit"])){
+  $name = $_POST["name"];
+  $description = $_POST["description"];
+  if($_FILES["logo"]["error"] == 4){
+    echo
+    "<script> alert('Image Does Not Exist'); </script>"
+    ;
+  }
+  else{
+    $fileName = $_FILES["logo"]["name"];
+    $fileSize = $_FILES["logo"]["size"];
+    $tmpName = $_FILES["logo"]["tmp_name"];
+
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $fileName);
+    $imageExtension = strtolower(end($imageExtension));
+    if ( !in_array($imageExtension, $validImageExtension) ){
+      echo
+      "
+      <script>
+        alert('Invalid Image Extension');
+      </script>
+      ";
+    }
+    else if($fileSize > 1000000){
+      echo
+      "
+      <script>
+        alert('Image Size Is Too Large');
+      </script>
+      ";
+    }
+    else{
+      $newImageName = uniqid();
+      $newImageName .= '.' . $imageExtension;
+
+      move_uploaded_file($tmpName, 'images/' . $newImageName);
+      $query = "INSERT INTO item VALUES('','$name','$newImageName','$description',1)";
+      mysqli_query($conn, $query);
+      echo
+      "
+      <script>
+        alert('Successfully Added');
+        document.location.href = 'data.php';
+      </script>
+      ";
+    }
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,31 +96,20 @@
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Signup -->
-        <div class="admin-mid-container">
-            <div class="outer-login-container">
-                <div class="login-card">
-                    <div id="login-title">
-                        <h1>Signup</h1>
-                        <div class="underline-title"></div>
-                    </div>
-                    <form method="post" action="DBconn.php" id="login-form">
-                      <input type="text" placeholder="Username" class="form-content" name="username">
-                        <div class="form-underline"></div>
-                        <br>
-                        <input type="email" placeholder="Email" class="form-content" name="email">
-                        <div class="form-underline"></div>
-                        <br>
-                        <input type="password" placeholder="Password" class="form-content" name="password">
-                        <div class="form-underline"></div>
-                        <button class="login-btn" type="submit">Signup</button>
-                        <a href="adminLogin.html" id="signup-pointer">Already have account? sign-in</a>
+        <!-- Edit Item forms -->
+        <div class="panel-mid-container">
+            <div class="additem-outer-mid-container">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <div class="additem-mid-box">
+                            <label for="additem-name">Enter ID</label>
+                            <br><br>
+                            <input type="text" name="name" id="additem-name" placeholder="Enter Name">
+                            <div class="additem-form-underline"></div>
+                        </div>
+                        <button type="submit" name="submit" class="additem-btn">Submit</button>
                     </form>
-                </div>
             </div>
         </div>
-        
-
     </body>
 
     <!-- Bootstrap footer-->

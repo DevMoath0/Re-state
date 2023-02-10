@@ -56,7 +56,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
                 echo "Logged in!";
 
-                include('SignupSuccess.html');
+                include('adminPanel.html');
 
                 exit();
 

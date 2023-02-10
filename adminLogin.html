@@ -47,13 +47,13 @@
                         <h1>Login</h1>
                         <div class="underline-title"></div>
                     </div>
-                    <form method="post" action="" id="login-form">
-                        <input type="email" placeholder="Username" class="form-content">
+                    <form method="post" action="DBsession.php" id="login-form">
+                        <input type="text" placeholder="Username" class="form-content" name="username">
                         <div class="form-underline"></div>
                         <br> <br>
-                        <input type="password" placeholder="Password" class="form-content">
+                        <input type="password" placeholder="Password" class="form-content" name="password">
                         <div class="form-underline"></div>
-                        <button class="login-btn" onclick="window.location.href='adminPanel.html'">Login</button>
+                        <button type="submit" name="submit" class="additem-btn">Submit</button>
                         <a href="adminSignup.html" id="signup-pointer">Don't have account yet?</a>
                     </form>
                 </div>

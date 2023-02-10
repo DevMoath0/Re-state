@@ -1,3 +1,12 @@
+<?php
+
+$conn = mysqli_connect("localhost", "root","", "restate");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,15 +48,33 @@
         </nav>
         <!-- NavBar Closed-->
 
-        <!-- Admin Panel -->
-        <div class="panel-mid-container">
-            <div class="outer-mid-container">
-                <button class="panel-mid-box" onclick="window.location.href='addItem.php'"><img src="images/plus.png" alt="Plus icon" class="text-icon">Add Item</button>
-                
-                <button class="panel-mid-box" onclick="window.location.href='editItem.php'"><img src="images/edit.png" alt="Edit icon" class="text-icon">Edit Item</button>
-                
-                <button class="panel-mid-box" onclick="window.location.href='delItem.php'"><img src="images/delete.png" alt="Delete icon" class="text-icon">Delete Item</button>
-            </div>
+        <!-- Edit Item forms -->
+        <div class="single-item-mid-container">
+          <div class="card-deck">
+          <?php
+                    $i = 1;
+                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+                    ?>
+                    <?php foreach ($rows as $row) : ?>
+                    <div class="card">
+                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                      <div class="card-body">
+                        <?php echo $row["name"]; ?>
+                        <?php echo $row["description"]; ?>
+                        <p class="card-review">This will be the review of the property</p>
+                        <form action="dropItem.php" method="POST">
+
+                        <!--Store The ID in Hidden text field to make the text field posted to the singleItem page -->
+                        <!-- 500IQ mashallah -->
+                        <input type="text" name="ID" hidden value="<?php echo $row["ID"]; ?>">
+                        <center><button type="submit" ><img src="images\del.png" alt="" height="100" width="100"></button></center>
+                        </form>
+                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
+                      </div>
+                    </div>
+            <?php endforeach; ?>
+
+          </div>
         </div>
         
 

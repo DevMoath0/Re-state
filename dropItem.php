@@ -6,15 +6,12 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
-    $newName=$_POST['newName'];
-    $newDes=$_POST['newDes'];
     $ID=$_POST['ID'];
 
-$sql = "UPDATE item SET name='$newName', description='$newDes' WHERE ID='$ID'";
+$sql = "DELETE FROM item WHERE ID='$ID'";
 
     if (mysqli_query($conn, $sql)) {
-        include('editItem.php');
+        include('delItem.php');
     } else {
         include('faild.html');
     }

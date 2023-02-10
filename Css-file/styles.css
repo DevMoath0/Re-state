@@ -58,7 +58,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: animate 10s ease-in-out infinite;
+    animation: animate 16s ease-in-out infinite;
 }
 
 /* Animating the Home background */
@@ -133,6 +133,10 @@
 }
 .item-btn-item:hover{
     box-shadow: 0px 1px 18px #a0712d;
+}
+.card-review{
+    margin-top: 5px;
+    color: #a0522d;
 }
 
 /* -------------------------------------------------------- Done with the Item page -------------------------------------------------------- */

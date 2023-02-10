@@ -50,27 +50,28 @@ if (!$conn) {
         <!-- Items Cards-->
         <div class="item-mid-container">
                 <!-------------------------------------------here---------------------------------------->
-                <table border = 1 cellspacing = 0 cellpadding = 10>
-      <tr>
-        <td>no.</td>
-        <td>Name</td>
-        <td>Image</td>
-        <td>description </td>
-      </tr>
-      <?php
-      $i = 1;
-      $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
-      ?>
-
-      <?php foreach ($rows as $row) : ?>
-      <tr>
-        <td><?php echo $i++; ?></td>
-        <td><?php echo $row["name"]; ?></td>
-        <td> <img src="images/<?php echo $row["logo"]; ?>" width = 200 title="<?php echo $row['logo']; ?>"> </td>
-        <td><?php echo $row["description"]; ?></td>
-      </tr>
-      <?php endforeach; ?>
-    </table>
+                <div class="card-deck">
+                    <?php
+                    $i = 1;
+                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+                    ?>
+                    <?php foreach ($rows as $row) : ?>
+                     
+                    <div class="card">
+                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                      <div class="card-body">
+                        <?php echo $row["name"]; ?>
+                        <?php echo $row["description"]; ?>
+                        <p class="card-review">This will be the review of the property</p>
+                        <button class="item-btn-item" onclick="window.location.href='singleItem.html';">Go To Item</button>
+                        <p class="card-text"><small class="text-muted">5 out of 5</small></p>
+                      </div>
+                    </div>
+                    <?php endforeach; ?>
+                    
+                </div>
+      
+    
     <br>
               <!-------------------------------------------here---------------------------------------->
         </div>

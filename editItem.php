@@ -63,24 +63,26 @@ if(isset($_POST["submit"])){
         <!-- NavBar Closed-->
 
         <!-- Edit Item forms -->
-        <div class="panel-mid-container">
-            <div class="additem-outer-mid-container">
-                    <form method="post" action="" enctype="multipart/form-data">
-                        <div class="additem-mid-box">
-                            <label for="additem-name">Enter ID</label>
-                            <br><br>
-                            <input type="text" name="ID" id="additem-name" placeholder="Enter ID">
-                            <div class="additem-form-underline"></div>
-                        </div>
-                        <div class="additem-mid-box">
-                            <label for="additem-name">Edit Description</label>
-                            <br><br>
-                            <input type="text" name="description" id="additem-name" placeholder="Enter Description">
-                            <div class="additem-form-underline"></div>
-                        </div>
-                        <button type="submit" name="submit" class="additem-btn">Submit</button>
-                    </form>
-            </div>
+        <div class="single-item-mid-container delete">
+        <div class="card-deck">
+                    <?php
+                    $i = 1;
+                    $rows = mysqli_query($conn, "SELECT * FROM item ORDER BY id DESC")
+                    ?>
+                    <?php foreach ($rows as $row) : ?>
+                    <div class="card">
+                      <img src="images/<?php echo $row["logo"]; ?>" width = 100% height = 200px title="<?php echo $row['logo']; ?>">
+                      <div class="card-body">
+                        <?php echo $row["name"]; ?>
+                        <?php echo $row["description"]; ?>
+                        <p class="card-review">This will be the review of the property</p>
+                        
+                        <!-- Edit Item not functioning -->
+                        <button class="item-btn-item" onclick="window.location.href='singleItem.html';">Edit Item</button>
+                      </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
         </div>
         
 

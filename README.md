@@ -5,6 +5,7 @@ Re-state is a real estate website built with HTML, CSS, and PHP. It allows users
 ## Table of Contents
 
 - [Features](#features)
+- [Screenshots](#Screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -16,6 +17,9 @@ Re-state is a real estate website built with HTML, CSS, and PHP. It allows users
 - **User-Friendly Interface:** Intuitive design for a seamless user experience.
 - **Responsive Design:** Compatible with various devices for a consistent look and feel.
 - **Secure:** Implements best practices for security.
+
+## Screenshots
+![LoginPage](https://github.com/DevMoath0/Re-state/assets/109462109/8de51dce-030b-4c29-8b62-1c428ea52971)
 
 ## Installation
 

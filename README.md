@@ -25,12 +25,17 @@ Re-state is a real estate website built with HTML, CSS, and PHP. It allows users
     git clone https://github.com/DevMoath0/Re-state.git
     ```
 
-2. **Update Configuration:**
+2. **Configure Database:**
+
+    - Create a new MySQL database.
+    - Import the `restate.sql` file into your database.
+
+3. **Update Configuration:**
 
     - Navigate to the `DBconn.php` file.
     - Update the database connection details.
 
-3. **Run the Application:**
+4. **Run the Application:**
 
     - Start your local server (e.g., using XAMPP, WAMP).
     - Access the application through your browser.

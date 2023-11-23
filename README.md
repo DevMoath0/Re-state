@@ -19,7 +19,10 @@ Re-state is a real estate website built with HTML, CSS, and PHP. It allows users
 - **Secure:** Implements best practices for security.
 
 ## Screenshots
-![LoginPage](https://github.com/DevMoath0/Re-state/assets/109462109/8de51dce-030b-4c29-8b62-1c428ea52971)
+![LoginPage](https://github.com/DevMoath0/Re-state/assets/109462109/dfa0cfc1-896f-4cff-8739-8e6898452a3b)
+![AdminPanel](https://github.com/1DevNawaf/BMI-Calculator/assets/109462109/a4e830a6-9f19-4fbf-b2b7-f5834adf1b1b)
+![PropertyList](https://github.com/1DevNawaf/BMI-Calculator/assets/109462109/6c87aa1a-c114-411a-8ff7-0d6c8f3fc89d)
+![DeleteProperty](https://github.com/1DevNawaf/BMI-Calculator/assets/109462109/1711c9c1-f139-4163-bf46-b96d104db0b5)
 
 ## Installation
 

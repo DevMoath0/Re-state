@@ -1,4 +1,4 @@
-# Re-state Real Estate Website
+#  Real Estate Website
 
 Re-state is a real estate website built with HTML, CSS, and PHP. It allows users to add, update, and delete properties.
 
@@ -10,6 +10,7 @@ Re-state is a real estate website built with HTML, CSS, and PHP. It allows users
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Contact](#Contact)
 
 ## Features
 
@@ -78,3 +79,9 @@ If you would like to contribute to this project, please follow these steps:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any questions or assistance:
+
+[devmoath1@gmail.com](mailto:devmoath1@gmail.com).
+[@_Devmoath](https://twitter.com/_DevMoath)
